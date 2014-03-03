@@ -4,7 +4,8 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-$('#text').text('Hello World');
+var strList = str.split(/\s+/);
+$('#text').text(strList[0]);
 });
 </script>
 </head>
