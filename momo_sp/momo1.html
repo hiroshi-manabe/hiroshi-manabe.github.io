@@ -5,6 +5,7 @@
 <script>
 var count = 0;
 var interval_time = 200;
+var slice_count = 30;
 var interval = null;
 var interval_on = false;
 var strList = str.split(/\s+/);
@@ -20,8 +21,10 @@ function timer() {
 function toggleInterval(){
     if (interval_on) {
         clearInterval(interval);
+        $('#text_back').text(strList.slice(Math.max(0, count - slice_count), count).join(" "));
     } else {
         interval = setInterval("timer()", interval_time);
+        $('#text_back').text("");
     }
     interval_on = !interval_on;
 }
