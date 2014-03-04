@@ -4,19 +4,35 @@
 <script src="momo1.js"></script>
 <script>
 var count = 0;
+var interval_time = 200;
+var interval = null;
+var interval_on = false;
 var strList = str.split(/\s+/);
+
 $(document).ready(function(){
-setInterval("timer()", 200);
+interval = setInterval("timer()", interval_time);
+interval_on = true;
 });
 function timer() {
 $('#text').text(strList[count]);
 ++count;
 }
+$(document).click(function(){
+    if (interval_on) {
+        clearInterval(interval);
+    } else {
+        interval = setInterval("timer()", interval_time);
+    }
+});
+
 </script>
 </head>
 <body>
 <div style="font-size:8em;text-align:center;">
 <span id="text" style=""></span>
+</div>
+<div style="font-size:8em;text-align:center;">
+<span id="text_back" style=""></span>
 </div>
 </body>
 </html>
