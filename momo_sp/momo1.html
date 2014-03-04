@@ -10,21 +10,23 @@ var interval_on = false;
 var strList = str.split(/\s+/);
 
 $(document).ready(function(){
-interval = setInterval("timer()", interval_time);
-interval_on = true;
+    interval = setInterval("timer()", interval_time);
+    interval_on = true;
 });
 function timer() {
-$('#text').text(strList[count]);
-++count;
+    $('#text').text(strList[count]);
+    ++count;
 }
-$(document).click(function(){
+function toggleInterval(){
     if (interval_on) {
         clearInterval(interval);
     } else {
         interval = setInterval("timer()", interval_time);
     }
     interval_on = !interval_on;
-});
+}
+$(document).click(toggleInterval);
+$(document).touch(toggleInterval);
 
 </script>
 </head>
