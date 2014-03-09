@@ -67,6 +67,9 @@ function spritz(){
         return;
     }
 
+    if (str) {
+        spritzify(str);
+    }
     var selection = getSelectionText();
     if(selection){
         spritzify(selection);
