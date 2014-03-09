@@ -69,13 +69,14 @@ function spritz(){
 
     if (str) {
         spritzify(str);
-    }
-    var selection = getSelectionText();
-    if(selection){
-        spritzify(selection);
-    }
-    else{
-        spritzifyURL();
+    } else {
+        var selection = getSelectionText();
+        if(selection){
+            spritzify(selection);
+        }
+        else{
+            spritzifyURL();
+        }
     }
 }
 
@@ -97,6 +98,10 @@ function spritzify(input){
     var t = 0;
 
     for (var i=0; i<all_words.length; i++){
+
+        if(all_words[i].indexOf('.') != -1){
+            temp_words[t] = all_words[i].replace('.', '&#8226;');
+        }
 
         // Double up on long words and words with commas.
         if((all_words[i].indexOf(',') != -1 || all_words[i].indexOf(':') != -1 || all_words[i].indexOf('-') != -1 || all_words[i].indexOf('(') != -1|| all_words[i].length > 8) && all_words[i].indexOf('.') == -1){
