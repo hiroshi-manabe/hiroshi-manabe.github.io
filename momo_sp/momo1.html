@@ -2,6 +2,7 @@
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="momo1.js"></script>
+<script src="spritz.js"></script>
 <script>
 var count = 0;
 var interval_time = 200;
@@ -11,6 +12,7 @@ var interval_on = false;
 var strList = str.split(/\s+/);
 
 $(document).ready(function(){
+    create_spritz();
     interval = setInterval("timer()", interval_time);
     interval_on = true;
 });
