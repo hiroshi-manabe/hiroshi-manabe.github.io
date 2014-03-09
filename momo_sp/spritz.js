@@ -112,7 +112,7 @@ function spritzify(input){
         }
 
         // Add an additional space after punctuation.
-        if(all_words[i].indexOf('•') != -1 || all_words[i].indexOf('!') != -1 || all_words[i].indexOf('?') != -1 || all_words[i].indexOf(':') != -1 || all_words[i].indexOf(';') != -1|| all_words[i].indexOf(')') != -1){
+        if(all_words[i].indexOf('.') != -1 || all_words[i].indexOf('!') != -1 || all_words[i].indexOf('?') != -1 || all_words[i].indexOf(':') != -1 || all_words[i].indexOf(';') != -1|| all_words[i].indexOf(')') != -1){
             temp_words.splice(t+1, 0, ".");
             temp_words.splice(t+1, 0, ".");
             temp_words.splice(t+1, 0, ".");
