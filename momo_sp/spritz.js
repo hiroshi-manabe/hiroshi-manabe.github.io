@@ -100,7 +100,7 @@ function spritzify(input){
     for (var i=0; i<all_words.length; i++){
 
         if(all_words[i].indexOf('.') != -1){
-            temp_words[t] = all_words[i].replace('.', '&#8226;');
+            temp_words[t] = all_words[i].replace('.', '•');
         }
 
         // Double up on long words and words with commas.
