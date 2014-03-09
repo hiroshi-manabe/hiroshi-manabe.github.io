@@ -106,8 +106,6 @@ function spritzify(input){
         // Double up on long words and words with commas.
         if((all_words[i].indexOf(',') != -1 || all_words[i].indexOf(':') != -1 || all_words[i].indexOf('-') != -1 || all_words[i].indexOf('(') != -1|| all_words[i].length > 8) && all_words[i].indexOf('.') == -1){
             temp_words.splice(t+1, 0, all_words[i]);
-            temp_words.splice(t+1, 0, all_words[i]);
-            t++;
             t++;
         }
 
