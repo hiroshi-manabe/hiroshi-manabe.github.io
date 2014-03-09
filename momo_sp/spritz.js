@@ -213,7 +213,7 @@ function pivot(word){
 
     else{
 
-        var tail = 30 - (word.length + 7);
+        var tail = 22 - (word.length + 7);
         word = '.......' + word + ('.'.repeat(tail));
 
         var start = word.slice(0, word.length/2);
@@ -311,8 +311,8 @@ function clearTimeouts(){
 // Let strings repeat themselves,
 // because JavaScript isn't as awesome as Python.
 String.prototype.repeat = function( num ){
-    if (num <= 0) {
-        debugger;
+    if (num <= -2) {
+        num = -1;
     }
     return new Array( num + 1 ).join( this );
 }
