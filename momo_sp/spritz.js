@@ -229,6 +229,7 @@ function pivot(word){
     }
 
     result = result.replace(/\./g, "<span class='invisible'>.</span>");
+    result = result.replace(/•/g, ".");
 
     return result;
 }
