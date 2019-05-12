@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Read Mario Kart 8 character names</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style></style>
+    <script>
+      var characters = [];
+      var i = 0;
+      characters[i++] = "キノピオ";
+      characters[i++] = "ノコノコ";
+      characters[i++] = "ピーチ";
+      characters[i++] = "ヨッシー";
+      characters[i++] = "マリオ";
+      characters[i++] = "ルイージ";
+      characters[i++] = "ドンキーコング";
+      characters[i++] = "クッパ";
+      for(var i = characters.length - 1; i > 0; i--){
+          var r = Math.floor(Math.random() * (i + 1));
+          var tmp = characters[i];
+          characters[i] = characters[r];
+          characters[r] = tmp;
+      }
+      var n = 0;
+      var ssu = new SpeechSynthesisUtterance();
+      ssu.lang = 'ja-JP';
+      document.onkeydown = function() {
+          setTimeout(read, 1500);
+      }
+      function read() {
+          var chardiv = document.getElementById("char");
+          var to_read = "";
+          if (n < characters.length) {
+              to_read = characters[n];
+          }
+          else {
+              to_read = "終わり";
+          }
+          ssu.text = to_read;
+          speechSynthesis.speak(ssu);
+          chardiv.innerHTML = to_read;
+          n++;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="char" style="font-size:72pt;">
+    </div>
+  </body>
+</html>
