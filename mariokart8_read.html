@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Read Mario Kart 8 character names</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style></style>
+    <script>
+      var characters = [];
+      var i = 0;
+      characters[i++] = "ベビィマリオ";
+      characters[i++] = "ベビィルイージ";
+      characters[i++] = "ベビィピーチ";
+      characters[i++] = "ベビィデイジー";
+      characters[i++] = "ベビィロゼッタ";
+      characters[i++] = "レミー";
+      characters[i++] = "カロン";
+      characters[i++] = "キノピオ";
+      characters[i++] = "キノピコ";
+      characters[i++] = "ノコノコ";
+      characters[i++] = "ジュゲム";
+      characters[i++] = "ヘイホー";
+      characters[i++] = "ラリー";
+      characters[i++] = "ウェンディ";
+      characters[i++] = "しずえ";
+      characters[i++] = "クッパジュニア";
+      characters[i++] = "ピーチ";
+      characters[i++] = "デイジー";
+      characters[i++] = "ヨッシー";
+      characters[i++] = "たぬきマリオ";
+      characters[i++] = "ネコピーチ";
+      characters[i++] = "むらびと 男";
+      characters[i++] = "むらびと 女";
+      characters[i++] = "ガール";
+      characters[i++] = "ボーイ";
+      characters[i++] = "マリオ";
+      characters[i++] = "ルイージ";
+      characters[i++] = "ルドウィッグ";
+      characters[i++] = "イギー";
+      characters[i++] = "ドンキーコング";
+      characters[i++] = "ワルイージ";
+      characters[i++] = "ロゼッタ";
+      characters[i++] = "ロイ";
+      characters[i++] = "メタルマリオ";
+      characters[i++] = "ピンクゴールドピーチ";
+      characters[i++] = "リンク";
+      characters[i++] = "キングテレサ";
+      characters[i++] = "クッパ";
+      characters[i++] = "ワリオ";
+      characters[i++] = "モートン";
+      characters[i++] = "ほねクッパ";
+      for(var i = characters.length - 1; i > 0; i--){
+          var r = Math.floor(Math.random() * (i + 1));
+          var tmp = characters[i];
+          characters[i] = characters[r];
+          characters[r] = tmp;
+      }
+      var n = 0;
+      var ssu = new SpeechSynthesisUtterance();
+      ssu.lang = 'ja-JP';
+      document.onkeydown = function() {
+          setTimeout(read, 1500);
+      }
+      function read() {
+          var chardiv = document.getElementById("char");
+          var to_read = "";
+          if (n < characters.length) {
+              to_read = characters[n];
+          }
+          else {
+              to_read = "終わり";
+          }
+          ssu.text = to_read;
+          speechSynthesis.speak(ssu);
+          chardiv.innerHTML = characters[n];
+          n++;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="char" style="font-size:72pt;">
+    </div>
+  </body>
+</html>
