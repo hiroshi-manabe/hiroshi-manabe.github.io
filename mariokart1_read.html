@@ -25,10 +25,18 @@
       var n = 0;
       var ssu = new SpeechSynthesisUtterance();
       ssu.lang = 'ja-JP';
+      var is_waiting = 0;
       document.onkeydown = function() {
-          setTimeout(read, 1500);
+          if (is_waiting) {
+              return;
+          }
+          else {
+              is_waiting = 1;
+              setTimeout(read, 1500);
+          }
       }
       function read() {
+          is_waiting = 0;
           var chardiv = document.getElementById("char");
           var to_read = "";
           if (n < characters.length) {
