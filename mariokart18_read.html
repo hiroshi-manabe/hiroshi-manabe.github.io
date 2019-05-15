@@ -67,7 +67,7 @@
       var ssu = new SpeechSynthesisUtterance();
       ssu.lang = 'ja-JP';
       var is_waiting = 0;
-      document.onkeydown = function() {
+      function fire {
           if (is_waiting) {
               return;
           }
@@ -76,6 +76,9 @@
               setTimeout(read, 1500);
           }
       }
+      document.onclick = fire;
+      document.ontouchend = fire;
+      document.onkeydown = fire;
       function read() {
           is_waiting = 0;
           var chardiv = document.getElementById("char");
