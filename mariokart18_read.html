@@ -76,8 +76,8 @@
               setTimeout(read, 1500);
           }
       }
-      document.onclick = fire;
-      document.ontouchend = fire;
+      document.onclick = read2;
+      document.ontouchend = read2;
       document.onkeydown = fire;
       function read() {
           is_waiting = 0;
@@ -98,6 +98,13 @@
           ssu.rate = 1.0;
           speechSynthesis.speak(ssu);
       }
+  function read2() {
+      var u = new SpeechSynthesisUtterance();
+      u.text = "こんにちは";
+      u.lang = 'ja-JP';
+      u.rate = 1.0;
+      window.speechSynthesis.speak(u);
+  }
     </script>
   </head>
   <body>

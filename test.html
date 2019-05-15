@@ -9,21 +9,14 @@
 <input type="button" id="jaJP" value="こんにちは">
 </body>
 <script type="text/javascript">
-document.getElementById("enUS").addEventListener("click", function(e) {
-    if (typeof SpeechSynthesisUtterance == "undefined") {return}
-    var u = new SpeechSynthesisUtterance();
-    u.text = "hello";
-    u.lang = 'en-US';
-    u.rate = 1.0;
-    window.speechSynthesis.speak(u);
-});
-document.getElementById("jaJP").addEventListener("click", function(e) {
-    if (typeof SpeechSynthesisUtterance == "undefined") {return}
-    var u = new SpeechSynthesisUtterance();
-    u.text = "こんにちは";
-    u.lang = 'ja-JP';
-    u.rate = 1.0;
-    window.speechSynthesis.speak(u);
-})
+  function read() {
+      var u = new SpeechSynthesisUtterance();
+      u.text = "こんにちは";
+      u.lang = 'ja-JP';
+      u.rate = 1.0;
+      window.speechSynthesis.speak(u);
+  }
+  document.onclick = read;
+
 </script>
 </html>
