@@ -99,11 +99,10 @@
           speechSynthesis.speak(ssu);
       }
   function read2() {
-      var u = new SpeechSynthesisUtterance();
-      u.text = "こんにちは";
-      u.lang = 'ja-JP';
-      u.rate = 1.0;
-      window.speechSynthesis.speak(u);
+      ssu.text = "こんにちは";
+      ssu.lang = 'ja-JP';
+      ssu.rate = 1.0;
+      window.speechSynthesis.speak(ssu);
   }
     </script>
   </head>
