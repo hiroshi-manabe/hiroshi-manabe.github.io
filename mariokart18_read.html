@@ -93,6 +93,10 @@
           speechSynthesis.speak(ssu);
           chardiv.innerHTML = to_read;
           n++;
+          ssu.text = "こんにちは";
+          ssu.lang = "ja-JP";
+          ssu.rate = 1.0;
+          speechSynthesis.speak(ssu);
       }
     </script>
   </head>
