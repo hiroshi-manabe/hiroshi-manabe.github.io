@@ -60,9 +60,11 @@
       mk1_characters[i++] = "ドンキーコング";
       mk1_characters[i++] = "クッパ";
       
+      let n = 0;
+      
       function init(mode) {
+          n = 0;
           characters = [];
-          let n = 0;
           if (mode === "mk1" || mode == "mk18") {
               characters = characters.concat(mk1_characters);
           }
@@ -107,10 +109,9 @@
               n++;
           }
       }
-      init("mk18");
     </script>
   </head>
-  <body>
+  <body onload="init('mk18');">
     <div>
       <button onclick="init('mk18');">全部</button>
       <button onclick="init('mk8');">新しいマリオカートだけ</button>
