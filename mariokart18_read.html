@@ -4,7 +4,9 @@
     <title>Read Mario Kart 8 character names</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style></style>
+    <style>
+      html, body { height: 100%; }
+    </style>
     <script>
       let mk1_characters = [];
       let mk8_characters = [];
@@ -63,8 +65,6 @@
       let n = 0;
       
       function init(mode) {
-          document.ontouchend = undefined;
-          document.onkeydown = undefined;
           n = 0;
           characters = [];
           if (mode === "mk1" || mode == "mk18") {
@@ -80,8 +80,6 @@
               characters[r] = tmp;
           }
           document.getElementById("char").innerHTML = "";
-          document.ontouchend = read;
-          document.onkeydown = read;
       }
       let ssu = new SpeechSynthesisUtterance();
       ssu.lang = 'ja-JP';
@@ -113,12 +111,13 @@
       }
     </script>
   </head>
-  <body onload="init('mk18');" style="height: 100%;">
+  <body onload="init('mk18');" style="height: 100%;" onkeydown="read();">
     <div>
       <button onclick="init('mk18');">全部</button>
       <button onclick="init('mk8');">新しいマリオカートだけ</button>
       <button onclick="init('mk1');">古いマリオカートだけ</button>
-    <div id="char" style="font-size:72pt;" style="height: 100%;">
+    </div>
+    <div id="char" style="font-size:72pt; height: 100%;" style="height: 100%;" ontouchend="read();">
     </div>
   </body>
 </html>
