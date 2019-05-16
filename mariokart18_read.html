@@ -62,6 +62,7 @@
       
       function init(mode) {
           characters = [];
+          let n = 0;
           if (mode === "mk1" || mode == "mk18") {
               characters = characters.concat(mk1_characters);
           }
@@ -74,8 +75,8 @@
               characters[i] = characters[r];
               characters[r] = tmp;
           }
+          document.getElementById("char").innerHTML = "";
       }
-      let n = 0;
       let ssu = new SpeechSynthesisUtterance();
       ssu.lang = 'ja-JP';
       let is_waiting = 0;
