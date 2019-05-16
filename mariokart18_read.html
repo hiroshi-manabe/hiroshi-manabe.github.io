@@ -79,13 +79,8 @@
       let ssu = new SpeechSynthesisUtterance();
       ssu.lang = 'ja-JP';
       let is_waiting = 0;
-      function resetFlag() {
-          is_waiting = 0;
-      }
       document.ontouchend = read;
       document.onkeydown = read;
-      function setText() {
-      }
       function read() {
           if (is_waiting) {
               return;
@@ -105,10 +100,9 @@
           ssu.text = to_read;
           ssu.volume = 1;
           ssu.onend = function () {
-              ssu.onend = undefined;
+              ssu.onend = function() { is_waiting = 0; };
               speechSynthesis.speak(ssu);
               chardiv.innerHTML = to_read;
-              setTimeout(resetFlag, 1500);
               n++;
           }
       }
