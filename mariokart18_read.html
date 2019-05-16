@@ -63,6 +63,8 @@
       let n = 0;
       
       function init(mode) {
+          document.ontouchend = undefined;
+          document.onkeydown = undefined;
           n = 0;
           characters = [];
           if (mode === "mk1" || mode == "mk18") {
@@ -78,12 +80,12 @@
               characters[r] = tmp;
           }
           document.getElementById("char").innerHTML = "";
+          document.ontouchend = read;
+          document.onkeydown = read;
       }
       let ssu = new SpeechSynthesisUtterance();
       ssu.lang = 'ja-JP';
       let is_waiting = 0;
-      document.ontouchend = read;
-      document.onkeydown = read;
       function read() {
           if (is_waiting) {
               return;
