@@ -6,96 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style></style>
     <script>
-      var characters = [];
-      var i = 0;
-      characters[i++] = "ベビィマリオ";
-      characters[i++] = "ベビィルイージ";
-      characters[i++] = "ベビィピーチ";
-      characters[i++] = "ベビィデイジー";
-      characters[i++] = "ベビィロゼッタ";
-      characters[i++] = "レミー";
-      characters[i++] = "カロン";
-      characters[i++] = "キノピオ";
-      characters[i++] = "キノピコ";
-      characters[i++] = "ノコノコ";
-      characters[i++] = "ジュゲム";
-      characters[i++] = "ヘイホー";
-      characters[i++] = "ラリー";
-      characters[i++] = "ウェンディ";
-      characters[i++] = "しずえ";
-      characters[i++] = "クッパジュニア";
-      characters[i++] = "ピーチ";
-      characters[i++] = "デイジー";
-      characters[i++] = "ヨッシー";
-      characters[i++] = "たぬきマリオ";
-      characters[i++] = "ネコピーチ";
-      characters[i++] = "むらびと 男";
-      characters[i++] = "むらびと 女";
-      characters[i++] = "ガール";
-      characters[i++] = "ボーイ";
-      characters[i++] = "マリオ";
-      characters[i++] = "ルイージ";
-      characters[i++] = "ルドウィッグ";
-      characters[i++] = "イギー";
-      characters[i++] = "ドンキーコング";
-      characters[i++] = "ワルイージ";
-      characters[i++] = "ロゼッタ";
-      characters[i++] = "ロイ";
-      characters[i++] = "メタルマリオ";
-      characters[i++] = "ピンクゴールドピーチ";
-      characters[i++] = "リンク";
-      characters[i++] = "キングテレサ";
-      characters[i++] = "クッパ";
-      characters[i++] = "ワリオ";
-      characters[i++] = "モートン";
-      characters[i++] = "ほねクッパ";
-      characters[i++] = "キノピオ";
-      characters[i++] = "ノコノコ";
-      characters[i++] = "ピーチ";
-      characters[i++] = "ヨッシー";
-      characters[i++] = "マリオ";
-      characters[i++] = "ルイージ";
-      characters[i++] = "ドンキーコング";
-      characters[i++] = "クッパ";
-      for(var i = characters.length - 1; i > 0; i--){
-          var r = Math.floor(Math.random() * (i + 1));
-          var tmp = characters[i];
-          characters[i] = characters[r];
-          characters[r] = tmp;
+      let mk1_characters = [];
+      let mk8_characters = [];
+      let i = 0;
+      mk8_characters[i++] = "ベビィマリオ";
+      mk8_characters[i++] = "ベビィルイージ";
+      mk8_characters[i++] = "ベビィピーチ";
+      mk8_characters[i++] = "ベビィデイジー";
+      mk8_characters[i++] = "ベビィロゼッタ";
+      mk8_characters[i++] = "レミー";
+      mk8_characters[i++] = "カロン";
+      mk8_characters[i++] = "キノピオ";
+      mk8_characters[i++] = "キノピコ";
+      mk8_characters[i++] = "ノコノコ";
+      mk8_characters[i++] = "ジュゲム";
+      mk8_characters[i++] = "ヘイホー";
+      mk8_characters[i++] = "ラリー";
+      mk8_characters[i++] = "ウェンディ";
+      mk8_characters[i++] = "しずえ";
+      mk8_characters[i++] = "クッパジュニア";
+      mk8_characters[i++] = "ピーチ";
+      mk8_characters[i++] = "デイジー";
+      mk8_characters[i++] = "ヨッシー";
+      mk8_characters[i++] = "たぬきマリオ";
+      mk8_characters[i++] = "ネコピーチ";
+      mk8_characters[i++] = "むらびと 男";
+      mk8_characters[i++] = "むらびと 女";
+      mk8_characters[i++] = "ガール";
+      mk8_characters[i++] = "ボーイ";
+      mk8_characters[i++] = "マリオ";
+      mk8_characters[i++] = "ルイージ";
+      mk8_characters[i++] = "ルドウィッグ";
+      mk8_characters[i++] = "イギー";
+      mk8_characters[i++] = "ドンキーコング";
+      mk8_characters[i++] = "ワルイージ";
+      mk8_characters[i++] = "ロゼッタ";
+      mk8_characters[i++] = "ロイ";
+      mk8_characters[i++] = "メタルマリオ";
+      mk8_characters[i++] = "ピンクゴールドピーチ";
+      mk8_characters[i++] = "リンク";
+      mk8_characters[i++] = "キングテレサ";
+      mk8_characters[i++] = "クッパ";
+      mk8_characters[i++] = "ワリオ";
+      mk8_characters[i++] = "モートン";
+      mk8_characters[i++] = "ほねクッパ";
+      i = 0;
+      mk1_characters[i++] = "キノピオ";
+      mk1_characters[i++] = "ノコノコ";
+      mk1_characters[i++] = "ピーチ";
+      mk1_characters[i++] = "ヨッシー";
+      mk1_characters[i++] = "マリオ";
+      mk1_characters[i++] = "ルイージ";
+      mk1_characters[i++] = "ドンキーコング";
+      mk1_characters[i++] = "クッパ";
+      
+      function init(mode) {
+          characters = [];
+          if (mode === "mk1" || mode == "mk18") {
+              characters = characters.concat(mk1_characters);
+          }
+          if (mode === "mk8" || mode == "mk18") {
+              characters = characters.concat(mk8_characters);
+          }
+          for(let i = characters.length - 1; i > 0; i--){
+              let r = Math.floor(Math.random() * (i + 1));
+              let tmp = characters[i];
+              characters[i] = characters[r];
+              characters[r] = tmp;
+          }
       }
-      var n = 0;
-      var ssu = new SpeechSynthesisUtterance();
+      let n = 0;
+      let ssu = new SpeechSynthesisUtterance();
       ssu.lang = 'ja-JP';
-      var is_waiting = 0;
-      function fire() {
+      let is_waiting = 0;
+      function resetFlag() {
+          is_waiting = 0;
+      }
+      document.ontouchend = read;
+      document.onkeydown = read;
+      function setText() {
+      }
+      function read() {
           if (is_waiting) {
               return;
           }
-          else {
-              is_waiting = 1;
-              setTimeout(read, 1500);
-          }
-      }
-      document.ontouchend = fire;
-      document.onkeydown = fire;
-      function read() {
-          is_waiting = 0;
-          var chardiv = document.getElementById("char");
-          var to_read = "";
+          is_waiting = 1;
+          let chardiv = document.getElementById("char");
+          let to_read = "";
           if (n < characters.length) {
               to_read = characters[n];
           }
           else {
               to_read = "終わり";
           }
-          ssu.text = to_read;
+          ssu.text = "ああああああああ";
+          ssu.volume = 0;
           speechSynthesis.speak(ssu);
-          chardiv.innerHTML = to_read;
-          n++;
+          ssu.text = to_read;
+          ssu.volume = 1;
+          ssu.onend = function () {
+              ssu.onend = undefined;
+              speechSynthesis.speak(ssu);
+              chardiv.innerHTML = to_read;
+              setTimeout(resetFlag, 1500);
+              n++;
+          }
       }
+      init("mk18");
     </script>
   </head>
   <body>
+    <div>
+      <button onclick="init('mk18');">全部</button>
+      <button onclick="init('mk8');">新しいマリオカートだけ</button>
+      <button onclick="init('mk1');">古いマリオカートだけ</button>
     <div id="char" style="font-size:72pt;">
     </div>
   </body>
