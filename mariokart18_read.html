@@ -11,48 +11,50 @@
     <script>
       let mk1_characters = [];
       let mk8_characters = [];
+      let mk8_dx_characters = [];
       let i = 0;
       mk8_characters[i++] = ["マリオ", "characters-1.jpg"];
       mk8_characters[i++] = ["ルイージ", "characters-2.jpg"];
       mk8_characters[i++] = ["ピーチ", "characters-3.jpg"];
       mk8_characters[i++] = ["デイジー", "characters-4.jpg"];
-      mk8_characters[i++] = ["ロゼッタ", "characters-5.jpg"];
-      mk8_characters[i++] = ["たぬきマリオ", "characters-6.jpg"];
-      mk8_characters[i++] = ["ネコピーチ", "characters-7.jpg"];
       mk8_characters[i++] = ["ヨッシー", "characters-8.jpg"];
       mk8_characters[i++] = ["キノピオ", "characters-9.jpg"];
       mk8_characters[i++] = ["ノコノコ", "characters-10.jpg"];
       mk8_characters[i++] = ["ヘイホー", "characters-11.jpg"];
-      mk8_characters[i++] = ["ジュゲム", "characters-12.jpg"];
-      mk8_characters[i++] = ["キノピコ", "characters-13.jpg"];
-      mk8_characters[i++] = ["キングテレサ", "characters-14.jpg"];
       mk8_characters[i++] = ["ベビィマリオ", "characters-15.jpg"];
       mk8_characters[i++] = ["ベビィルイージ", "characters-16.jpg"];
       mk8_characters[i++] = ["ベビィピーチ", "characters-17.jpg"];
       mk8_characters[i++] = ["ベビィデイジー", "characters-18.jpg"];
-      mk8_characters[i++] = ["ベビィロゼッタ", "characters-19.jpg"];
-      mk8_characters[i++] = ["メタルマリオ", "characters-20.jpg"];
-      mk8_characters[i++] = ["ピンクゴールドピーチ", "characters-21.jpg"];
-      mk8_characters[i++] = ["ワリオ", "characters-22.jpg"];
-      mk8_characters[i++] = ["ワルイージ", "characters-23.jpg"];
       mk8_characters[i++] = ["ドンキーコング", "characters-24.jpg"];
       mk8_characters[i++] = ["クッパ", "characters-25.jpg"];
-      mk8_characters[i++] = ["カロン", "characters-26.jpg"];
-      mk8_characters[i++] = ["クッパジュニア", "characters-27.jpg"];
-      mk8_characters[i++] = ["ほねクッパ", "characters-28.jpg"];
-      mk8_characters[i++] = ["レミー", "characters-29.jpg"];
-      mk8_characters[i++] = ["ラリー", "characters-30.jpg"];
-      mk8_characters[i++] = ["ウェンディ", "characters-31.jpg"];
-      mk8_characters[i++] = ["ルドウィッグ", "characters-32.jpg"];
-      mk8_characters[i++] = ["イギー", "characters-33.jpg"];
-      mk8_characters[i++] = ["ロイ", "characters-34.jpg"];
-      mk8_characters[i++] = ["モートン", "characters-35.jpg"];
-      mk8_characters[i++] = ["ガール", "characters-36.jpg"];
-      mk8_characters[i++] = ["ボーイ", "characters-37.jpg"];
-      mk8_characters[i++] = ["リンク", "characters-38.jpg"];
-      mk8_characters[i++] = ["むらびと 男", "characters-39.jpg"];
-      mk8_characters[i++] = ["むらびと 女", "characters-40.jpg"];
-      mk8_characters[i++] = ["しずえ", "characters-41.jpg"];
+      mk8_characters[i++] = ["ワリオ", "characters-22.jpg"];
+      mk8_characters[i++] = ["ワルイージ", "characters-23.jpg"];
+      i = 0;
+      mk8_dx_characters[i++] = ["ロゼッタ", "characters-5.jpg"];
+      mk8_dx_characters[i++] = ["たぬきマリオ", "characters-6.jpg"];
+      mk8_dx_characters[i++] = ["ネコピーチ", "characters-7.jpg"];
+      mk8_dx_characters[i++] = ["ジュゲム", "characters-12.jpg"];
+      mk8_dx_characters[i++] = ["キノピコ", "characters-13.jpg"];
+      mk8_dx_characters[i++] = ["キングテレサ", "characters-14.jpg"];
+      mk8_dx_characters[i++] = ["ベビィロゼッタ", "characters-19.jpg"];
+      mk8_dx_characters[i++] = ["メタルマリオ", "characters-20.jpg"];
+      mk8_dx_characters[i++] = ["ピンクゴールドピーチ", "characters-21.jpg"];
+      mk8_dx_characters[i++] = ["カロン", "characters-26.jpg"];
+      mk8_dx_characters[i++] = ["クッパジュニア", "characters-27.jpg"];
+      mk8_dx_characters[i++] = ["ほねクッパ", "characters-28.jpg"];
+      mk8_dx_characters[i++] = ["レミー", "characters-29.jpg"];
+      mk8_dx_characters[i++] = ["ラリー", "characters-30.jpg"];
+      mk8_dx_characters[i++] = ["ウェンディ", "characters-31.jpg"];
+      mk8_dx_characters[i++] = ["ルドウィッグ", "characters-32.jpg"];
+      mk8_dx_characters[i++] = ["イギー", "characters-33.jpg"];
+      mk8_dx_characters[i++] = ["ロイ", "characters-34.jpg"];
+      mk8_dx_characters[i++] = ["モートン", "characters-35.jpg"];
+      mk8_dx_characters[i++] = ["ガール", "characters-36.jpg"];
+      mk8_dx_characters[i++] = ["ボーイ", "characters-37.jpg"];
+      mk8_dx_characters[i++] = ["リンク", "characters-38.jpg"];
+      mk8_dx_characters[i++] = ["むらびと 男", "characters-39.jpg"];
+      mk8_dx_characters[i++] = ["むらびと 女", "characters-40.jpg"];
+      mk8_dx_characters[i++] = ["しずえ", "characters-41.jpg"];
       i = 0;
       mk1_characters[i++] = ["ドンキーコング", "mk1_1.png"];
       mk1_characters[i++] = ["キノピオ", "mk1_2.png"];
@@ -68,20 +70,32 @@
       function init(mode) {
           n = 0;
           characters = [];
-          if (mode === "mk1" || mode == "mk18") {
+          if (mode === "mk1" || mode === "all") {
               characters = characters.concat(mk1_characters);
           }
-          if (mode === "mk8" || mode == "mk18") {
+          if (mode === "mk8" || mode === "mk8_dx" || mode === "all") {
               characters = characters.concat(mk8_characters);
           }
-          for(let i = characters.length - 1; i > 0; i--){
+          if (mode === "mk8_dx" || mode == "all") {
+              characters = characters.concat(mk8_dx_characters);
+          }
+          let chars = document.getElementById("chars");
+          while (chars.firstChild) {
+              chars.removeChild(chars.firstChild);
+          }
+          for (let i = 0; i < characters.length; i++) {
+              let img = document.createElement("img");
+              img.src = "images/" + characters[i][1];
+              img.style.width = "64pt";
+              chars.appendChild(img);
+          }
+          for (let i = characters.length - 1; i > 0; i--){
               let r = Math.floor(Math.random() * (i + 1));
               let tmp = characters[i];
               characters[i] = characters[r];
               characters[r] = tmp;
-              document.createElement('img').src = "images/" + characters[i][1];
           }
-          document.getElementById("char").innerHTML = "タップしてね";
+          document.getElementById("char").innerHTML = "";
           document.getElementById("image").src = "images/blank.png";
       }
       let ssu = new SpeechSynthesisUtterance();
@@ -92,6 +106,10 @@
               return;
           }
           is_waiting = 1;
+          let chars = document.getElementById("chars");
+          while (chars.firstChild) {
+              chars.removeChild(chars.firstChild);
+          }
           let to_read = "";
           if (n < characters.length) {
               to_read = characters[n][0];
@@ -116,11 +134,14 @@
   </head>
   <body onload="init('mk18');" style="height: 100%;" onkeydown="read();">
     <div>
-      <button onclick="init('mk18');">全部</button>
-      <button onclick="init('mk8');">新しいマリオカートだけ</button>
-      <button onclick="init('mk1');">古いマリオカートだけ</button>
+      <button onclick="init('all');">全部 49人</button>
+      <button onclick="init('mk1');">古い 8人</button>
+      <button onclick="init('mk8');">新しい 16人</button>
+      <button onclick="init('mk8_dx');">新しい 41人</button>
     </div>
     <div style="height: 100%;" ontouchend="read();">
+      <div id="chars">
+      </div>
       <div id="char" style="font-size:60pt;">
         タップしてね
       </div>
