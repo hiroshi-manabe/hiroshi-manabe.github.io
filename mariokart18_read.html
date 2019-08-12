@@ -87,6 +87,7 @@
               let img = document.createElement("img");
               img.src = "images/" + characters[i][1];
               img.style.width = "64pt";
+              img.style.marginRight = "2pt";
               chars.appendChild(img);
           }
           for (let i = characters.length - 1; i > 0; i--){
@@ -132,7 +133,7 @@
       }
     </script>
   </head>
-  <body onload="init('mk18');" style="height: 100%;" onkeydown="read();">
+  <body onload="init('all');" style="height: 100%;" onkeydown="read();">
     <div>
       <button onclick="init('all');">全部 49人</button>
       <button onclick="init('mk1');">古い 8人</button>
